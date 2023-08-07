@@ -29,3 +29,6 @@ services:
       - 9091:3000
     environment:
       GF_AUTH_ANONYMOUS_ENABLED: true
+      GF_AUTH_ORG_ROLE: editor
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_SECURITY_ADMIN_USER: admin
