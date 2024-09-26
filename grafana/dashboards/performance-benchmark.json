@@ -138,14 +138,14 @@
             "uid": "${DS_PROM1}"
           },
           "editorMode": "code",
-          "expr": "(conduit_pipeline_execution_duration_seconds_count{pipeline_name=\"perf-test\"} - \nconduit_pipeline_execution_duration_seconds_count{pipeline_name=\"perf-test\"} offset 1m) / (conduit_pipeline_execution_duration_seconds_sum{pipeline_name=\"perf-test\"} - \nconduit_pipeline_execution_duration_seconds_sum{pipeline_name=\"perf-test\"} offset 1m)",
+          "expr": "(conduit_pipeline_execution_duration_seconds_count{pipeline_name=\"perf-test\"} - \nconduit_pipeline_execution_duration_seconds_count{pipeline_name=\"perf-test\"} offset 5s) / 5",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
         }
       ],
-      "title": "PipelineRate",
+      "title": "PipelineRate (records/s)",
       "type": "timeseries"
     },
     {
@@ -388,7 +388,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -443,13 +444,13 @@
     "list": []
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "Performance benchmark",
   "uid": "ddz2bktj9rg8wd",
-  "version": 4,
-  "weekStart": ""
+  "version": 9,
+  "weekStart": "monday"
 }
