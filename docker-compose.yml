@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   prometheus:
     image: prom/prometheus:latest
@@ -21,8 +20,6 @@ services:
     restart: unless-stopped
     links:
       - prometheus:prometheus
-    build:
-      context: grafana
     expose:
       - 3000
     ports:
