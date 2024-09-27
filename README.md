@@ -3,13 +3,19 @@
 This repository contains a simple Docker Compose configuration containing
 Prometheus and Grafana.
 
-Prometheus is pre-configured to collect metrics from a local instance of
-Conduit running on `localhost:8080`. The scrape target can be adjusted in the
-[Prometheus config](https://github.com/conduitio-labs/prom-graf/blob/aaa2fb1364d7e2b140cf49145eb2f236ee53f94c/prometheus/config/prometheus.yml#L31).
+Prometheus is pre-configured to collect metrics from:
+
+* a local instance of Conduit running on `localhost:8080`.
+* a local Node exporter instance running on `localhost:9100`
+
+The scrapes target can be adjusted in the
+[Prometheus config](prometheus/config/prometheus.yml#L31).
 
 Grafana is pre-configured to attach to the Prometheus instance and contains
-dashboards for monitoring Conduit specific metrics as well as generic [Go
-runtime metrics](https://pkg.go.dev/runtime/metrics).
+dashboards for monitoring Conduit specific metrics,
+generic [Go runtime metrics](https://pkg.go.dev/runtime/metrics), and node
+metrics (CPU usage, memory usage, disk I/O, etc.) through
+Prometheus' [Node exporter](https://github.com/prometheus/node_exporter).
 
 Note that this is only meant to be used for development purposes.
 

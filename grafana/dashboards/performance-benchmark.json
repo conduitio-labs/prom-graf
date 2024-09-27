@@ -1,35 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_PROM1",
-      "label": "prom1",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "prometheus",
-      "pluginName": "Prometheus"
-    }
-  ],
-  "__elements": {},
-  "__requires": [
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "11.2.0"
-    },
-    {
-      "type": "datasource",
-      "id": "prometheus",
-      "name": "Prometheus",
-      "version": "1.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "timeseries",
-      "name": "Time series",
-      "version": ""
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -49,13 +18,13 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": null,
+  "id": 3,
   "links": [],
   "panels": [
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROM1}"
+        "uid": "qXbWAcW7k"
       },
       "fieldConfig": {
         "defaults": {
@@ -135,7 +104,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROM1}"
+            "uid": "qXbWAcW7k"
           },
           "editorMode": "code",
           "expr": "(conduit_pipeline_execution_duration_seconds_count{pipeline_name=\"perf-test\"} - \nconduit_pipeline_execution_duration_seconds_count{pipeline_name=\"perf-test\"} offset 5s) / 5",
@@ -151,7 +120,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROM1}"
+        "uid": "qXbWAcW7k"
       },
       "fieldConfig": {
         "defaults": {
@@ -231,7 +200,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROM1}"
+            "uid": "qXbWAcW7k"
           },
           "editorMode": "code",
           "expr": "conduit_pipeline_execution_duration_seconds_count{pipeline_name=\"perf-test\"}",
@@ -247,7 +216,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROM1}"
+        "uid": "qXbWAcW7k"
       },
       "fieldConfig": {
         "defaults": {
@@ -327,7 +296,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROM1}"
+            "uid": "qXbWAcW7k"
           },
           "editorMode": "code",
           "expr": "(conduit_pipeline_execution_duration_seconds_sum{pipeline_name=\"perf-test\"} / conduit_pipeline_execution_duration_seconds_count{pipeline_name=\"perf-test\"}) * 1000",
@@ -343,7 +312,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROM1}"
+        "uid": "qXbWAcW7k"
       },
       "fieldConfig": {
         "defaults": {
@@ -423,7 +392,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROM1}"
+            "uid": "qXbWAcW7k"
           },
           "editorMode": "code",
           "expr": "conduit_pipeline_execution_duration_seconds_count{pipeline_name=\"perf-test\"} / conduit_pipeline_execution_duration_seconds_sum{pipeline_name=\"perf-test\"}",
@@ -451,6 +420,6 @@
   "timezone": "browser",
   "title": "Performance benchmark",
   "uid": "ddz2bktj9rg8wd",
-  "version": 9,
+  "version": 1,
   "weekStart": "monday"
 }
