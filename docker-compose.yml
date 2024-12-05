@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   prometheus:
     image: prom/prometheus:latest
@@ -16,13 +15,11 @@ services:
       host.docker.internal: host-gateway
 
   grafana:
-    build: './grafana'
+    image: grafana/grafana:latest
     container_name: conduit_grafana
     restart: unless-stopped
     links:
       - prometheus:prometheus
-    build:
-      context: grafana
     expose:
       - 3000
     ports:
@@ -32,3 +29,6 @@ services:
       GF_AUTH_ORG_ROLE: editor
       GF_SECURITY_ADMIN_PASSWORD: admin
       GF_SECURITY_ADMIN_USER: admin
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
